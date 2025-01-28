@@ -20,4 +20,4 @@ kubectl apply -f service.yaml
 echo "Creating K8s Webhooks"
 ENCODED_CA=$(cat certs/tls.crt | base64 | tr -d '\n')
 # sed -e 's@${ENCODED_CA}@'"$ENCODED_CA"'@g' <"manifests/webhooks.yml" | kubectl create -f -
-sed -e "s/<ENCODED_CA>/${ENCODED_CA}/g" <"manifests/webhook.yml" | kubectl create -f -
+sed -e "s/<ENCODED_CA>/${ENCODED_CA}/g" <"webhook.yml" | kubectl create -f -
